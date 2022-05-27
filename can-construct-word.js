@@ -5,11 +5,14 @@
  * false, otherwise return true.
  */
 function canConstructWord(word, letters) {
+  if(letters === '') return false;
   const freq1 = ferquncyCounter(word);
   const freq2 = ferquncyCounter(letters);
 
   for (let letter in freq1) {
-    if (freq1[letter] !== freq2[letter]) {
+    //console.log(letter, "freq1 = ", freq1[letter],"freq2 = ", freq2[letter] );
+    if (freq1[letter] > freq2[letter]) {
+      //console.log("freq1 = ", freq1, "freq2 = ", freq2);
       return false;
     }
   }
