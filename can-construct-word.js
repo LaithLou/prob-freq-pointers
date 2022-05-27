@@ -1,10 +1,11 @@
 "use strict";
 
-/**take in a word in letters run them through a frequnecy counter
+/**take in a word and letters run them through a frequnecy counter
  * and make sure that we can make words out of the letters. if not return
  * false, otherwise return true.
  */
 function canConstructWord(word, letters) {
+  //logic modification: check if words is larger than letters.
   if (letters === "") return false;
   const freq1 = ferquncyCounter(word);
   const freq2 = ferquncyCounter(letters);
