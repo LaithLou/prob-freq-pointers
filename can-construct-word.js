@@ -6,7 +6,7 @@
  */
 function canConstructWord(word, letters) {
   //logic modification: check if words is larger than letters.
-  if (letters === "") return false;
+  if (word.length > letters.length) return false;
   const freq1 = ferquncyCounter(word);
   const freq2 = ferquncyCounter(letters);
 
@@ -19,6 +19,9 @@ function canConstructWord(word, letters) {
   return true;
 }
 
+/** Takes in an iterable argument, creates an object with the key being each value of the
+ * argument and the value being the amount of times it repeats. Returns that object
+ */
 function ferquncyCounter(string) {
   let freqs = {};
   for (let char of string) {
